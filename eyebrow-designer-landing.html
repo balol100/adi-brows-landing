@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adi Buganim - עיצוב גבות מקצועי</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f0e8 0%, #fdf8f3 100%);
+            color: #333;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f5f0e8" width="1200" height="600"/></svg>');
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(218, 165, 32, 0.1) 0%, transparent 70%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(180deg); }
+        }
+
+        .logo-container {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .eyebrows {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 30px;
+        }
+
+        .eyebrow {
+            width: 140px;
+            height: 25px;
+            background: linear-gradient(90deg, transparent 0%, #2c1810 20%, #2c1810 80%, transparent 100%);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            transform: skew(-5deg, 2deg);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .eyebrow:last-child {
+            transform: skew(5deg, 2deg);
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 300;
+            color: #d4af37;
+            margin-bottom: 10px;
+            font-family: 'Brush Script MT', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.2s ease-out 0.3s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            color: #666;
+            margin-bottom: 40px;
+            font-weight: 300;
+            animation: fadeIn 1.4s ease-out 0.5s both;
+        }
+
+        .cta-container {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out 0.7s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .phone-number {
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: 600;
+            color: #d4af37;
+            text-decoration: none;
+            padding: 25px 50px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f5f0 100%);
+            border: 3px solid #d4af37;
+            border-radius: 50px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+            direction: ltr;
+        }
+
+        .phone-number:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            color: white;
+        }
+
+        .services {
+            background: white;
+            padding: 80px 20px;
+            animation: fadeIn 1.6s ease-out 0.9s both;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: #d4af37;
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #fdfbf7 0%, #f8f5f0 100%);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #d4af37;
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .about {
+            background: linear-gradient(135deg, #f5f0e8 0%, #fdf8f3 100%);
+            padding: 80px 20px;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.3rem;
+            line-height: 2;
+            color: #555;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #d4af37;
+            padding: 20px 60px;
+            font-size: 1.8rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 20px 50px;
+            font-size: 1.8rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+            background: #20ba5a;
+        }
+
+        .footer {
+            background: #2c1810;
+            color: #d4af37;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .phone-number {
+                font-size: 2rem;
+                padding: 20px 40px;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .eyebrows {
+                gap: 40px;
+            }
+
+            .eyebrow {
+                width: 100px;
+                height: 20px;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+            }
+
+            .whatsapp-button,
+            .cta-button {
+                font-size: 1.5rem;
+                padding: 18px 40px;
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="logo-container">
+            <div class="eyebrows">
+                <div class="eyebrow"></div>
+                <div class="eyebrow"></div>
+            </div>
+            <h1>Adi Buganim</h1>
+            <p class="subtitle">עיצוב גבות מקצועי</p>
+        </div>
+        
+        <div class="cta-container">
+            <a href="tel:+972502129735" class="phone-number">050-2129735</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">השירותים שלי</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>עיצוב גבות</h3>
+                    <p>עיצוב מדויק ומקצועי המותאם אישית לצורת הפנים שלך ומדגיש את היופי הטבעי</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>צביעת גבות</h3>
+                    <p>צביעה איכותית בגוונים טבעיים שמעניקה מראה מלא ומושלם</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💫</div>
+                    <h3>שיפור מבנה</h3>
+                    <p>טיפול מקיף לשיפור מבנה הגבה והדגשת קו הגבות המושלם</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">קצת עליי</h2>
+            <div class="about-content">
+                <p>שמי עדי בוגנים ואני מעצבת גבות מקצועית עם ניסיון רב בתחום. אני מאמינה שגבות מעוצבות היטב הן המפתח למראה פנים מושלם. בכל טיפול אני משלבת מקצוענות, דיוק ותשומת לב לפרטים הקטנים כדי להעניק לך את התוצאה הטובה ביותר.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>מוכנה להפוך את הגבות שלך למושלמות?</h2>
+            <div class="contact-buttons">
+                <a href="tel:+972502129735" class="cta-button">התקשרי עכשיו 📞</a>
+                <a href="https://wa.me/972502129735?text=היי%20עדי,%20אשמח%20לקבוע%20תור%20לעיצוב%20גבות" class="whatsapp-button" target="_blank">שלחי וואטסאפ 💬</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Adi Buganim - עיצוב גבות מקצועי | 050-2129735</p>
+        <p style="margin-top: 10px; font-size: 0.9rem; color: #a0865f;">© 2026 כל הזכויות שמורות</p>
+    </footer>
+</body>
+</html>
