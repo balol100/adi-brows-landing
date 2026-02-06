@@ -17,6 +17,13 @@
     <meta property="og:description" content="מעצבת גבות מקצועית עם ניסיון רב. עיצוב, צביעה ושיפור מבנה גבות. התקשרי עכשיו!">
     <meta property="og:locale" content="he_IL">
 
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#d4af37">
+
+    <!-- Resource Hints -->
+    <link rel="dns-prefetch" href="https://wa.me">
+    <link rel="preconnect" href="https://wa.me" crossorigin>
+
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
 
@@ -122,6 +129,16 @@
             box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
         }
 
+        /* Performance: promote animated elements to own layer */
+        .phone-number,
+        .cta-button,
+        .whatsapp-button,
+        .service-card,
+        .testimonial-card,
+        .nav-phone {
+            will-change: transform;
+        }
+
         .hero {
             background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9)), 
                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f5f0e8" width="1200" height="600"/></svg>');
@@ -145,6 +162,7 @@
             height: 200%;
             background: radial-gradient(circle, rgba(218, 165, 32, 0.1) 0%, transparent 70%);
             animation: pulse 15s ease-in-out infinite;
+            will-change: transform;
         }
 
         @keyframes pulse {
@@ -280,6 +298,7 @@
             background: white;
             padding: 80px 20px;
             scroll-margin-top: 60px;
+            contain: layout style;
         }
 
         /* Scroll reveal animation */
@@ -356,6 +375,7 @@
         .about {
             background: linear-gradient(135deg, #f5f0e8 0%, #fdf8f3 100%);
             padding: 80px 20px;
+            contain: layout style;
         }
 
         .about-content {
@@ -372,6 +392,7 @@
             background: white;
             padding: 80px 20px;
             scroll-margin-top: 60px;
+            contain: layout style;
         }
 
         .testimonials-grid {
@@ -449,6 +470,7 @@
             padding: 80px 20px;
             text-align: center;
             color: white;
+            contain: layout style;
         }
 
         .cta-section h2 {
@@ -508,6 +530,7 @@
             padding: 40px 20px;
             text-align: center;
             font-size: 1.1rem;
+            contain: layout style;
         }
 
         @media (max-width: 768px) {
@@ -576,6 +599,15 @@
             .cta-section {
                 padding: 60px 20px;
             }
+        }
+
+        /* Content visibility for off-screen sections */
+        .about,
+        .testimonials,
+        .cta-section,
+        .footer {
+            content-visibility: auto;
+            contain-intrinsic-size: auto 500px;
         }
 
         /* Reduced motion preference */
@@ -710,38 +742,27 @@
 
     <!-- JavaScript for interactions -->
     <script>
-        // Sticky navigation on scroll
+        // Sticky navigation using IntersectionObserver (no scroll listener)
         const nav = document.querySelector('.nav');
-        let lastScroll = 0;
+        const hero = document.querySelector('.hero');
 
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
+        const navObserver = new IntersectionObserver(([entry]) => {
+            nav.classList.toggle('visible', !entry.isIntersecting);
+        }, { threshold: 0, rootMargin: '-300px 0px 0px 0px' });
 
-            if (currentScroll > 300) {
-                nav.classList.add('visible');
-            } else {
-                nav.classList.remove('visible');
-            }
+        navObserver.observe(hero);
 
-            lastScroll = currentScroll;
-        });
-
-        // Scroll reveal animation
-        const revealElements = document.querySelectorAll('.reveal');
-
-        const revealOnScroll = () => {
-            revealElements.forEach(el => {
-                const elementTop = el.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-
-                if (elementTop < windowHeight - 100) {
-                    el.classList.add('active');
+        // Scroll reveal using IntersectionObserver (replaces scroll listener)
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
                 }
             });
-        };
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-        window.addEventListener('scroll', revealOnScroll);
-        window.addEventListener('load', revealOnScroll);
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     </script>
 </body>
 </html>
