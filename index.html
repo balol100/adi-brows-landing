@@ -18,7 +18,7 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9)), 
+            background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9)),
                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f5f0e8" width="1200" height="600"/></svg>');
             min-height: 100vh;
             display: flex;
@@ -29,6 +29,8 @@
             padding: 40px 20px;
             position: relative;
             overflow: hidden;
+            /* isolation מבטיח שה-stacking context של hero לא ישפיע על position:fixed מחוצה לו */
+            isolation: isolate;
         }
 
         .hero::before {
@@ -332,7 +334,7 @@
         .accessibility-btn {
             position: fixed;
             bottom: 24px;
-            left: 24px;
+            right: 24px;
             background: #2c3e50;
             color: white;
             border: none;
@@ -344,11 +346,14 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            z-index: 9999;
+            z-index: 99999;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
-            transition: all 0.3s ease;
+            transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
             min-width: 44px;
             min-height: 44px;
+            /* מניע את הכפתור ל-compositing layer משלו כדי לא ייחסם על-ידי overflow: hidden של hero */
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
         }
 
         .accessibility-btn:hover,
@@ -509,7 +514,7 @@
 
             .accessibility-btn {
                 bottom: 16px;
-                left: 16px;
+                right: 16px;
                 font-size: 0.9rem;
                 padding: 10px 16px;
             }
