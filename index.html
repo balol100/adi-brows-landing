@@ -29,8 +29,6 @@
             padding: 40px 20px;
             position: relative;
             overflow: hidden;
-            /* isolation מבטיח שה-stacking context של hero לא ישפיע על position:fixed מחוצה לו */
-            isolation: isolate;
         }
 
         .hero::before {
@@ -351,7 +349,6 @@
             transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
             min-width: 44px;
             min-height: 44px;
-            /* מניע את הכפתור ל-compositing layer משלו כדי לא ייחסם על-ידי overflow: hidden של hero */
             transform: translateZ(0);
             -webkit-transform: translateZ(0);
         }
