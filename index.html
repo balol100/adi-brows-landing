@@ -23,15 +23,15 @@
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "BeautySalon",
-        "name": "עדי בוגנים - עיצוב גבות מקצועי",
-        "alternateName": "Adi Buganim",
-        "telephone": "+972502129735",
-        "url": "https://wa.me/972502129735",
-        "priceRange": "$$",
-        "serviceType": ["עיצוב גבות", "צביעת גבות", "שיפור מבנה גבות"],
-        "areaServed": "Israel"
+      "@context": "https://schema.org",
+      "@type": "BeautySalon",
+      "name": "עדי בוגנים - עיצוב גבות מקצועי",
+      "alternateName": "Adi Buganim",
+      "telephone": "+972502129735",
+      "url": "https://wa.me/972502129735",
+      "priceRange": "$$",
+      "serviceType": ["עיצוב גבות", "צביעת גבות", "שיפור מבנה גבות"],
+      "areaServed": "Israel"
     }
     </script>
 
@@ -54,8 +54,7 @@
         }
 
         /* Accessibility - Focus States */
-        a:focus,
-        button:focus {
+        a:focus, button:focus {
             outline: 3px solid #d4af37;
             outline-offset: 3px;
         }
@@ -123,8 +122,7 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f5f0e8" width="1200" height="600"/></svg>');
+            background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f5f0e8" width="1200" height="600"/></svg>');
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -160,14 +158,8 @@
         }
 
         @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .eyebrows {
@@ -220,14 +212,8 @@
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .phone-number {
@@ -427,22 +413,10 @@
             height: 50px;
             background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
+            display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
         }
-
-        .testimonial-name {
-            font-weight: 600;
-            color: #333;
-        }
-
-        .testimonial-stars {
-            color: #d4af37;
-            font-size: 0.9rem;
-            margin-top: 3px;
-        }
+        .testimonial-name { font-weight: 600; color: #333; }
+        .testimonial-stars { color: #d4af37; font-size: 0.9rem; margin-top: 3px; }
 
         .cta-section {
             background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
@@ -451,11 +425,7 @@
             color: white;
         }
 
-        .cta-section h2 {
-            font-size: 3rem;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
+        .cta-section h2 { font-size: 3rem; margin-bottom: 30px; font-weight: 300; }
 
         .cta-button {
             display: inline-block;
@@ -511,89 +481,33 @@
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 3rem;
-            }
-
-            .subtitle {
-                font-size: 1.3rem;
-            }
-
-            .phone-number {
-                font-size: 2rem;
-                padding: 20px 40px;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
-            }
-
-            .eyebrows {
-                gap: 40px;
-            }
-
-            .eyebrow {
-                width: 100px;
-                height: 20px;
-            }
-
-            .contact-buttons {
-                flex-direction: column;
-            }
-
-            .whatsapp-button,
-            .cta-button {
-                font-size: 1.5rem;
-                padding: 18px 40px;
-                width: 100%;
-                max-width: 320px;
-            }
-
-            .nav {
-                padding: 12px 20px;
-            }
-
-            .nav-logo {
-                font-size: 1.4rem;
-            }
-
-            .nav-phone {
-                padding: 8px 18px;
-                font-size: 0.9rem;
-            }
-
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonial-card {
-                padding: 25px;
-            }
-
-            .services,
-            .about,
-            .testimonials,
-            .cta-section {
-                padding: 60px 20px;
-            }
+            h1 { font-size: 3rem; }
+            .subtitle { font-size: 1.3rem; }
+            .phone-number { font-size: 2rem; padding: 20px 40px; }
+            .section-title { font-size: 2.2rem; }
+            .eyebrows { gap: 40px; }
+            .eyebrow { width: 100px; height: 20px; }
+            .contact-buttons { flex-direction: column; }
+            .whatsapp-button, .cta-button { font-size: 1.5rem; padding: 18px 40px; width: 100%; max-width: 320px; }
+            .nav { padding: 12px 20px; }
+            .nav-logo { font-size: 1.4rem; }
+            .nav-phone { padding: 8px 18px; font-size: 0.9rem; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .testimonial-card { padding: 25px; }
+            .services, .about, .testimonials, .cta-section { padding: 60px 20px; }
         }
 
         /* Reduced motion preference */
         @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
+            *, *::before, *::after {
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
-
-            html {
-                scroll-behavior: auto;
-            }
+            html { scroll-behavior: auto; }
         }
 
-        /* ===== כפתור נגישות ===== */
+        /* ===== Accessibility Button & Modal ===== */
         .accessibility-btn {
             position: fixed;
             bottom: 24px;
@@ -604,30 +518,21 @@
             border-radius: 50px;
             padding: 12px 20px;
             font-size: 1rem;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 8px;
             z-index: 99999;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
-            transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-            min-width: 44px;
-            min-height: 44px;
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0);
+            transition: all 0.3s ease;
         }
 
-        .accessibility-btn:hover,
-        .accessibility-btn:focus {
+        .accessibility-btn:hover, .accessibility-btn:focus {
             background: #1a252f;
             transform: translateY(-2px);
-            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45);
             outline: 3px solid #d4af37;
-            outline-offset: 2px;
         }
 
-        /* ===== מודלים ===== */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -636,166 +541,59 @@
             z-index: 10000;
             padding: 20px;
             overflow-y: auto;
-        }
-
-        .modal-overlay.active {
-            display: flex;
             align-items: flex-start;
             justify-content: center;
         }
 
+        .modal-overlay.active { display: flex; }
+
         .modal-box {
             background: white;
             border-radius: 14px;
-            padding: 40px 36px 36px;
-            max-width: 680px;
+            padding: 40px 30px;
+            max-width: 700px;
             width: 100%;
-            margin: 40px auto;
+            margin-top: 40px;
             position: relative;
             direction: rtl;
             text-align: right;
-            line-height: 1.9;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
         .modal-close-btn {
             position: absolute;
-            top: 14px;
-            left: 14px;
+            top: 15px;
+            left: 15px;
             background: #f0f0f0;
             border: none;
-            font-size: 1.1rem;
-            cursor: pointer;
-            color: #444;
-            width: 36px;
-            height: 36px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.2s;
         }
 
-        .modal-close-btn:hover,
-        .modal-close-btn:focus {
-            background: #ddd;
-            color: #111;
-            outline: 2px solid #d4af37;
-        }
-
-        .modal-box h2 {
-            font-size: 1.8rem;
-            color: #d4af37;
-            margin-bottom: 20px;
-            padding-bottom: 14px;
-            border-bottom: 2px solid #f0e8d0;
-            font-weight: 600;
-        }
-
-        .modal-box h3 {
-            font-size: 1.15rem;
-            color: #2c1810;
-            margin: 22px 0 8px;
-            font-weight: 600;
-        }
-
-        .modal-box p,
-        .modal-box li {
-            color: #555;
-            font-size: 1rem;
-            margin-bottom: 8px;
-        }
-
-        .modal-box ul {
-            padding-right: 22px;
-            margin-bottom: 12px;
-        }
-
-        .modal-box a {
-            color: #b8932a;
-            text-decoration: underline;
-        }
-
-        .modal-box a:hover,
-        .modal-box a:focus {
-            color: #2c1810;
-        }
-
-        .modal-badge {
-            display: inline-block;
-            background: #eaf4ea;
-            color: #2e7d32;
-            border: 1px solid #a5d6a7;
-            border-radius: 6px;
-            padding: 4px 12px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        .modal-note {
-            font-size: 0.85rem;
-            color: #888;
-            margin-top: 28px;
-            padding-top: 14px;
-            border-top: 1px solid #e8ddd0;
-        }
-
-        .footer-links {
-            margin-top: 14px;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .footer-links button {
-            background: none;
-            border: none;
-            color: #c9a84c;
-            font-size: 0.95rem;
-            cursor: pointer;
-            text-decoration: underline;
-            font-family: inherit;
-            padding: 4px;
-            transition: color 0.2s;
-        }
-
-        .footer-links button:hover,
-        .footer-links button:focus {
-            color: #f4d03f;
-            outline: 2px solid #d4af37;
-            outline-offset: 2px;
-        }
-
-        @media (max-width: 768px) {
-            .modal-box {
-                padding: 30px 20px 24px;
-                margin: 20px auto;
-            }
-
-            .accessibility-btn {
-                bottom: 16px;
-                right: 16px;
-                font-size: 0.9rem;
-                padding: 10px 16px;
-            }
-        }
+        .modal-box h2 { color: #d4af37; margin-bottom: 20px; border-bottom: 2px solid #f0e8d0; padding-bottom: 10px; }
+        .modal-box h3 { margin-top: 20px; color: #2c1810; }
+        .modal-box ul { padding-right: 20px; margin: 10px 0; }
+        .footer-links { margin-top: 20px; display: flex; gap: 20px; justify-content: center; }
+        .footer-links button { background: none; border: none; color: #d4af37; cursor: pointer; text-decoration: underline; }
     </style>
 </head>
 <body>
-    <!-- Accessibility: Skip to main content -->
+
     <a href="#services" class="skip-link">דלג לתוכן הראשי</a>
 
-    <!-- Sticky Navigation -->
-    <nav class="nav" role="navigation" aria-label="ניווט ראשי">
+    <nav class="nav" id="mainNav">
         <a href="#" class="nav-logo">Adi Buganim</a>
-        <a href="tel:+972502129735" class="nav-phone" aria-label="התקשרי עכשיו">050-2129735</a>
+        <a href="tel:+972502129735" class="nav-phone">050-2129735</a>
     </nav>
 
-    <section class="hero" role="banner">
+    <header class="hero">
         <div class="logo-container">
-            <div class="eyebrows" aria-hidden="true">
+            <div class="eyebrows">
                 <div class="eyebrow"></div>
                 <div class="eyebrow"></div>
             </div>
@@ -804,30 +602,30 @@
         </div>
 
         <div class="cta-container">
-            <a href="tel:+972502129735" class="phone-number" aria-label="התקשרי לקביעת תור: 050-2129735">050-2129735</a>
+            <a href="tel:+972502129735" class="phone-number">050-2129735</a>
         </div>
 
-        <a href="#services" class="scroll-indicator" aria-label="גללי למטה">
-            <span>▼</span>
-        </a>
-    </section>
+        <div class="scroll-indicator" onclick="document.getElementById('services').scrollIntoView()">
+            ▼
+        </div>
+    </header>
 
-    <section id="services" class="services reveal" aria-labelledby="services-title">
+    <section id="services" class="services">
         <div class="container">
-            <h2 id="services-title" class="section-title">השירותים שלי</h2>
+            <h2 class="section-title reveal">השירותים שלי</h2>
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon" aria-hidden="true">✨</div>
+                <div class="service-card reveal">
+                    <div class="service-icon">✨</div>
                     <h3>עיצוב גבות</h3>
                     <p>עיצוב מדויק ומקצועי המותאם אישית לצורת הפנים שלך ומדגיש את היופי הטבעי</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon" aria-hidden="true">🎨</div>
+                <div class="service-card reveal">
+                    <div class="service-icon">🎨</div>
                     <h3>צביעת גבות</h3>
                     <p>צביעה איכותית בגוונים טבעיים שמעניקה מראה מלא ומושלם</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon" aria-hidden="true">💫</div>
+                <div class="service-card reveal">
+                    <div class="service-icon">💫</div>
                     <h3>שיפור מבנה</h3>
                     <p>טיפול מקיף לשיפור מבנה הגבה והדגשת קו הגבות המושלם</p>
                 </div>
@@ -835,223 +633,162 @@
         </div>
     </section>
 
-    <section class="about reveal" aria-labelledby="about-title">
+    <section class="about reveal">
         <div class="container">
-            <h2 id="about-title" class="section-title">קצת עליי</h2>
+            <h2 class="section-title">קצת עליי</h2>
             <div class="about-content">
                 <p>שמי עדי בוגנים ואני מעצבת גבות מקצועית עם ניסיון רב בתחום. אני מאמינה שגבות מעוצבות היטב הן המפתח למראה פנים מושלם. בכל טיפול אני משלבת מקצוענות, דיוק ותשומת לב לפרטים הקטנים כדי להעניק לך את התוצאה הטובה ביותר.</p>
             </div>
         </div>
     </section>
 
-    <section class="testimonials reveal" aria-labelledby="testimonials-title">
+    <section class="testimonials">
         <div class="container">
-            <h2 id="testimonials-title" class="section-title">מה הלקוחות אומרות</h2>
+            <h2 class="section-title reveal">מה הלקוחות אומרות</h2>
             <div class="testimonials-grid">
-                <article class="testimonial-card">
+                <div class="testimonial-card reveal">
                     <p class="testimonial-text">עדי פשוט קסומה! הגבות שלי נראות מדהים, טבעי ומושלם. ממליצה בחום!</p>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar" aria-hidden="true">👩</div>
+                        <div class="testimonial-avatar">👩</div>
                         <div>
                             <div class="testimonial-name">מיכל כ.</div>
-                            <div class="testimonial-stars" aria-label="5 כוכבים">★★★★★</div>
+                            <div class="testimonial-stars">★★★★★</div>
                         </div>
                     </div>
-                </article>
-                <article class="testimonial-card">
+                </div>
+                <div class="testimonial-card reveal">
                     <p class="testimonial-text">שירות מקצועי ואישי. עדי הקשיבה בדיוק למה שרציתי והתוצאה עלתה על כל הציפיות!</p>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar" aria-hidden="true">👩</div>
+                        <div class="testimonial-avatar">👩</div>
                         <div>
                             <div class="testimonial-name">שירה ל.</div>
-                            <div class="testimonial-stars" aria-label="5 כוכבים">★★★★★</div>
+                            <div class="testimonial-stars">★★★★★</div>
                         </div>
                     </div>
-                </article>
-                <article class="testimonial-card">
+                </div>
+                <div class="testimonial-card reveal">
                     <p class="testimonial-text">כבר שנתיים שאני מטפלת רק אצל עדי. ידיים זהב ותוצאות מושלמות בכל פעם מחדש!</p>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar" aria-hidden="true">👩</div>
+                        <div class="testimonial-avatar">👩</div>
                         <div>
                             <div class="testimonial-name">נועה ר.</div>
-                            <div class="testimonial-stars" aria-label="5 כוכבים">★★★★★</div>
+                            <div class="testimonial-stars">★★★★★</div>
                         </div>
                     </div>
-                </article>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section reveal" aria-labelledby="cta-title">
+    <section class="cta-section reveal">
         <div class="container">
-            <h2 id="cta-title">מוכנה להפוך את הגבות שלך למושלמות?</h2>
+            <h2>מוכנה להפוך את הגבות שלך למושלמות?</h2>
             <div class="contact-buttons">
-                <a href="tel:+972502129735" class="cta-button" aria-label="התקשרי עכשיו לקביעת תור">התקשרי עכשיו 📞</a>
-                <a href="https://wa.me/972502129735?text=היי%20עדי,%20אשמח%20לקבוע%20תור%20לעיצוב%20גבות" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="שלחי הודעה בוואטסאפ">שלחי וואטסאפ 💬</a>
+                <a href="tel:+972502129735" class="cta-button">התקשרי עכשיו 📞</a>
+                <a href="https://wa.me/972502129735?text=היי%20עדי,%20אשמח%20לקבוע%20תור%20לעיצוב%20גבות" class="whatsapp-button">שלחי וואטסאפ 💬</a>
             </div>
         </div>
     </section>
 
-    <footer class="footer" role="contentinfo">
-        <p>Adi Buganim - עיצוב גבות מקצועי | <a href="tel:+972502129735" style="color: #d4af37; text-decoration: none;">050-2129735</a></p>
-        <p style="margin-top: 10px; font-size: 0.9rem; color: #a0865f;">© 2026 כל הזכויות שמורות</p>
-        <div class="footer-links">
-            <button onclick="openModal('accessibility-modal')" aria-label="פתח הצהרת נגישות">הצהרת נגישות</button>
-            <button onclick="openModal('privacy-modal')" aria-label="פתח מדיניות פרטיות">מדיניות פרטיות</button>
+    <footer class="footer">
+        <div class="container">
+            <p>Adi Buganim - עיצוב גבות מקצועי | <a href="tel:+972502129735" style="color: inherit; text-decoration: none;">050-2129735</a></p>
+            <p>© 2026 כל הזכויות שמורות</p>
+            <div class="footer-links">
+                <button onclick="openModal('accessibility-modal')">הצהרת נגישות</button>
+                <button onclick="openModal('privacy-modal')">מדיניות פרטיות</button>
+            </div>
         </div>
     </footer>
 
-    <!-- ===== כפתור נגישות צף ===== -->
-    <button
-        class="accessibility-btn"
-        onclick="openModal('accessibility-modal')"
-        aria-label="פתח הצהרת נגישות"
-        title="נגישות"
-    >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true" focusable="false">
-            <circle cx="12" cy="4" r="2"/>
-            <path d="M12 7c-2.2 0-4 1.8-4 4v5h2v-4h4v4h2v-5c0-2.2-1.8-4-4-4zm-1 13v-4h2v4h-2z"/>
-        </svg>
-        נגישות
+    <!-- Accessibility Button -->
+    <button class="accessibility-btn" onclick="openModal('accessibility-modal')" aria-label="תפריט נגישות">
+        <span>♿</span>
+        <span>נגישות</span>
     </button>
 
-    <!-- ===== מודל הצהרת נגישות ===== -->
-    <div id="accessibility-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="acc-title">
-        <div class="modal-box">
-            <button class="modal-close-btn" onclick="closeModal('accessibility-modal')" aria-label="סגור חלון נגישות">✕</button>
+    <!-- Accessibility Modal -->
+    <div id="accessibility-modal" class="modal-overlay">
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="acc-title">
+            <button class="modal-close-btn" onclick="closeModal('accessibility-modal')" aria-label="סגור חלון">✕</button>
             <h2 id="acc-title">הצהרת נגישות</h2>
-            <span class="modal-badge">תקן IS 5568 / WCAG 2.1 רמה AA</span>
-
-            <p>
-                אנו ב-<strong>Adi Buganim - עיצוב גבות מקצועי</strong> מחויבים להנגשת האתר לכלל המשתמשים,
-                לרבות אנשים עם מוגבלות, בהתאם לחוק שוויון זכויות לאנשים עם מוגבלות (תשנ"ח-1998)
-                ותקנות הנגישות לשירות (תשע"ג-2013) ולתקן הישראלי <strong>IS 5568</strong>
-                המבוסס על הנחיות WCAG 2.1 ברמה AA.
-            </p>
-
-            <h3>מה בוצע לצורך הנגשת האתר</h3>
+            <p>אנו ב-**Adi Buganim** מחויבים להנגשת האתר לכלל המשתמשים, לרבות אנשים עם מוגבלות, בהתאם לתקן הישראלי IS 5568 ברמה AA.</p>
+            <h3>מה בוצע להנגשת האתר:</h3>
             <ul>
-                <li>הגדרת שפה עברית (<code>lang="he"</code>) וכיווניות RTL (<code>dir="rtl"</code>)</li>
-                <li>מבנה סמנטי תקין עם כותרות היררכיות (<code>h1</code>–<code>h3</code>)</li>
-                <li>תגיות <code>aria-label</code> על כפתורים וקישורים</li>
-                <li>יחסי ניגודיות צבע העומדים בדרישות WCAG 2.1 AA</li>
-                <li>גודל אזורי לחיצה מינימלי 44×44 פיקסל</li>
-                <li>עיצוב רספונסיבי ותמיכה במסכים קטנים</li>
-                <li>ניתן לנווט באמצעות מקלדת בלבד</li>
-                <li>שימוש ב-<code>role="dialog"</code> ו-<code>aria-modal="true"</code> בחלונות מוקפצים</li>
+                <li>ניווט מלא באמצעות מקלדת.</li>
+                <li>תמיכה בקוראי מסך ומבנה סמנטי תקין.</li>
+                <li>יחסי ניגודיות צבעים תקינים.</li>
+                <li>כפתורים ואזורי לחיצה בגודל נגיש (מינימום 44px).</li>
+                <li>התאמה מלאה למכשירים ניידים.</li>
             </ul>
-
-            <h3>חסמי נגישות ידועים</h3>
-            <p>
-                האתר נבדק ועדכן לאחרונה בפברואר 2026.
-                אנו עובדים באופן שוטף לשיפור הנגישות ולסילוק חסמים ככל שיזוהו.
-            </p>
-
-            <h3>יצירת קשר בנושא נגישות</h3>
-            <p>
-                נתקלתם בבעיית נגישות באתר? אנחנו כאן לעזור.<br>
-                <strong>עדי בוגנים</strong> – רכזת נגישות<br>
-                טלפון: <a href="tel:+972502129735">050-2129735</a><br>
-                וואטסאפ: <a href="https://wa.me/972502129735" target="_blank" rel="noopener">שלחו הודעה</a>
-            </p>
-
-            <p class="modal-note">
-                הצהרה זו עודכנה לאחרונה: פברואר 2026.<br>
-                בהתאם לתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), תשע"ג-2013.
-            </p>
+            <h3>יצירת קשר בנושא נגישות:</h3>
+            <p>עדי בוגנים - טלפון: <a href="tel:+972502129735">050-2129735</a></p>
+            <p class="modal-note">עדכון אחרון: פברואר 2026</p>
         </div>
     </div>
 
-    <!-- ===== מודל מדיניות פרטיות ===== -->
-    <div id="privacy-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="priv-title">
-        <div class="modal-box">
-            <button class="modal-close-btn" onclick="closeModal('privacy-modal')" aria-label="סגור חלון מדיניות פרטיות">✕</button>
+    <!-- Privacy Modal -->
+    <div id="privacy-modal" class="modal-overlay">
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="priv-title">
+            <button class="modal-close-btn" onclick="closeModal('privacy-modal')" aria-label="סגור חלון">✕</button>
             <h2 id="priv-title">מדיניות פרטיות</h2>
-
-            <p>
-                מדיניות פרטיות זו מסבירה כיצד <strong>Adi Buganim - עיצוב גבות מקצועי</strong>
-                אוספת, משתמשת ומגינה על מידע אישי, בהתאם לחוק הגנת הפרטיות (תשמ"א-1981).
-            </p>
-
-            <h3>איזה מידע נאסף?</h3>
-            <p>
-                האתר <strong>אינו אוסף מידע אישי אוטומטית</strong>.
-                אין שימוש בעוגיות (cookies) לצורכי מעקב, ואין שירותי אנליטיקה של צד שלישי.
-            </p>
-            <p>
-                כאשר תבחרי ליצור קשר (בטלפון או בוואטסאפ), המידע שתמסרי
-                (שם, מספר טלפון, תוכן ההודעה) ישמש <strong>אך ורק</strong> לצורך קביעת תור וחזרה אליך.
-            </p>
-
-            <h3>שירותי צד שלישי</h3>
-            <ul>
-                <li>
-                    <strong>וואטסאפ (Meta)</strong> – לחיצה על כפתור הוואטסאפ מעבירה אותך לשירות של Meta.
-                    השימוש בשירות זה כפוף ל-
-                    <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener">מדיניות הפרטיות של וואטסאפ</a>.
-                </li>
-            </ul>
-
-            <h3>אבטחת מידע</h3>
-            <p>
-                כל פנייה מטופלת בסודיות מלאה. המידע אינו מועבר לצדדים שלישיים ואינו נשמר במערכות חיצוניות.
-            </p>
-
-            <h3>זכויותיך</h3>
-            <ul>
-                <li>הזכות לעיין במידע שנמסר ולבקש תיקונו</li>
-                <li>הזכות לבקש מחיקת המידע שנמסר</li>
-                <li>הזכות לבטל הסכמה לשמירת מידע בכל עת</li>
-            </ul>
-
-            <h3>יצירת קשר בנושא פרטיות</h3>
-            <p>
-                לכל שאלה הנוגעת לפרטיות:<br>
-                <strong>עדי בוגנים</strong><br>
-                טלפון: <a href="tel:+972502129735">050-2129735</a>
-            </p>
-
-            <p class="modal-note">
-                מדיניות זו עודכנה לאחרונה: פברואר 2026.<br>
-                בהתאם לחוק הגנת הפרטיות, תשמ"א-1981, ותקנות הגנת הפרטיות (אבטחת מידע), תשע"ז-2017.
-            </p>
+            <p>אנו מכבדים את פרטיותך. האתר אינו אוסף מידע אישי באופן אוטומטי ואינו משתמש בעוגיות למעקב.</p>
+            <h3>איסוף מידע:</h3>
+            <p>מידע שנמסר על ידך באופן יזום (שם, טלפון) באמצעות וואטסאפ או שיחה טלפונית משמש אך ורק לצורך מתן השירות המבוקש.</p>
+            <h3>צדדים שלישיים:</h3>
+            <p>השימוש בוואטסאפ כפוף למדיניות הפרטיות של Meta.</p>
+            <p class="modal-note">עדכון אחרון: פברואר 2026</p>
         </div>
     </div>
 
     <script>
+        // Navigation Scroll Handler
+        window.addEventListener('scroll', function() {
+            var nav = document.getElementById('mainNav');
+            if (window.scrollY > 100) {
+                nav.classList.add('visible');
+            } else {
+                nav.classList.remove('visible');
+            }
+        });
+
+        // Intersection Observer for Reveal Animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Modal Functions
         function openModal(id) {
-            var modal = document.getElementById(id);
-            modal.classList.add('active');
+            document.getElementById(id).classList.add('active');
             document.body.style.overflow = 'hidden';
-            // Focus the close button for keyboard users
-            var closeBtn = modal.querySelector('.modal-close-btn');
-            if (closeBtn) { closeBtn.focus(); }
         }
 
         function closeModal(id) {
-            var modal = document.getElementById(id);
-            modal.classList.remove('active');
+            document.getElementById(id).classList.remove('active');
             document.body.style.overflow = '';
         }
 
-        // Close on overlay click
-        document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
-            overlay.addEventListener('click', function(e) {
-                if (e.target === overlay) {
-                    overlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            });
+        // Close on Escape or outside click
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay').forEach(m => closeModal(m.id));
+            }
         });
 
-        // Close on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.modal-overlay.active').forEach(function(m) {
-                    m.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
-            }
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) closeModal(overlay.id);
+            });
         });
     </script>
 </body>
