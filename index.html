@@ -134,32 +134,10 @@
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(218, 165, 32, 0.1) 0%, transparent 70%);
-            animation: pulse 15s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.1) rotate(180deg); }
-        }
-
         .logo-container {
             position: relative;
             z-index: 2;
             margin-bottom: 40px;
-            animation: fadeInDown 1s ease-out;
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .eyebrows {
@@ -189,12 +167,6 @@
             margin-bottom: 10px;
             font-family: 'Brush Script MT', cursive;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 1.2s ease-out 0.3s both;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
         .subtitle {
@@ -202,18 +174,6 @@
             color: #666;
             margin-bottom: 40px;
             font-weight: 300;
-            animation: fadeIn 1.4s ease-out 0.5s both;
-        }
-
-        .cta-container {
-            position: relative;
-            z-index: 2;
-            animation: fadeInUp 1s ease-out 0.7s both;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .phone-number {
@@ -239,10 +199,6 @@
             color: white;
         }
 
-        .phone-number:active {
-            transform: translateY(-2px);
-        }
-
         /* Scroll indicator */
         .scroll-indicator {
             position: absolute;
@@ -266,18 +222,6 @@
             background: white;
             padding: 80px 20px;
             scroll-margin-top: 60px;
-        }
-
-        /* Scroll reveal animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .container {
@@ -316,14 +260,9 @@
             box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
         }
 
-        .service-card:hover .service-icon {
-            transform: scale(1.1);
-        }
-
         .service-icon {
             font-size: 3.5rem;
             margin-bottom: 20px;
-            transition: transform 0.3s ease;
         }
 
         .service-card h3 {
@@ -382,18 +321,6 @@
             box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
         }
 
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 15px;
-            right: 25px;
-            font-size: 4rem;
-            color: #d4af37;
-            opacity: 0.3;
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-
         .testimonial-text {
             font-size: 1.1rem;
             color: #555;
@@ -415,8 +342,6 @@
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
         }
-        .testimonial-name { font-weight: 600; color: #333; }
-        .testimonial-stars { color: #d4af37; font-size: 0.9rem; margin-top: 3px; }
 
         .cta-section {
             background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
@@ -440,19 +365,6 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .contact-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-            margin-top: 20px;
-        }
-
         .whatsapp-button {
             display: inline-block;
             background: #25D366;
@@ -464,12 +376,6 @@
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
-        }
-
-        .whatsapp-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
-            background: #20ba5a;
         }
 
         .footer {
@@ -485,26 +391,8 @@
             .subtitle { font-size: 1.3rem; }
             .phone-number { font-size: 2rem; padding: 20px 40px; }
             .section-title { font-size: 2.2rem; }
-            .eyebrows { gap: 40px; }
-            .eyebrow { width: 100px; height: 20px; }
-            .contact-buttons { flex-direction: column; }
             .whatsapp-button, .cta-button { font-size: 1.5rem; padding: 18px 40px; width: 100%; max-width: 320px; }
             .nav { padding: 12px 20px; }
-            .nav-logo { font-size: 1.4rem; }
-            .nav-phone { padding: 8px 18px; font-size: 0.9rem; }
-            .testimonials-grid { grid-template-columns: 1fr; }
-            .testimonial-card { padding: 25px; }
-            .services, .about, .testimonials, .cta-section { padding: 60px 20px; }
-        }
-
-        /* Reduced motion preference */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-            html { scroll-behavior: auto; }
         }
 
         /* ===== Accessibility Button & Modal ===== */
@@ -525,12 +413,6 @@
             z-index: 99999;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
             transition: all 0.3s ease;
-        }
-
-        .accessibility-btn:hover, .accessibility-btn:focus {
-            background: #1a252f;
-            transform: translateY(-2px);
-            outline: 3px solid #d4af37;
         }
 
         .modal-overlay {
@@ -576,8 +458,6 @@
         }
 
         .modal-box h2 { color: #d4af37; margin-bottom: 20px; border-bottom: 2px solid #f0e8d0; padding-bottom: 10px; }
-        .modal-box h3 { margin-top: 20px; color: #2c1810; }
-        .modal-box ul { padding-right: 20px; margin: 10px 0; }
         .footer-links { margin-top: 20px; display: flex; gap: 20px; justify-content: center; }
         .footer-links button { background: none; border: none; color: #d4af37; cursor: pointer; text-decoration: underline; }
     </style>
@@ -612,19 +492,19 @@
 
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title reveal">השירותים שלי</h2>
+            <h2 class="section-title">השירותים שלי</h2>
             <div class="services-grid">
-                <div class="service-card reveal">
+                <div class="service-card">
                     <div class="service-icon">✨</div>
                     <h3>עיצוב גבות</h3>
                     <p>עיצוב מדויק ומקצועי המותאם אישית לצורת הפנים שלך ומדגיש את היופי הטבעי</p>
                 </div>
-                <div class="service-card reveal">
+                <div class="service-card">
                     <div class="service-icon">🎨</div>
                     <h3>צביעת גבות</h3>
                     <p>צביעה איכותית בגוונים טבעיים שמעניקה מראה מלא ומושלם</p>
                 </div>
-                <div class="service-card reveal">
+                <div class="service-card">
                     <div class="service-icon">💫</div>
                     <h3>שיפור מבנה</h3>
                     <p>טיפול מקיף לשיפור מבנה הגבה והדגשת קו הגבות המושלם</p>
@@ -633,7 +513,7 @@
         </div>
     </section>
 
-    <section class="about reveal">
+    <section class="about">
         <div class="container">
             <h2 class="section-title">קצת עליי</h2>
             <div class="about-content">
@@ -644,35 +524,32 @@
 
     <section class="testimonials">
         <div class="container">
-            <h2 class="section-title reveal">מה הלקוחות אומרות</h2>
+            <h2 class="section-title">מה הלקוחות אומרות</h2>
             <div class="testimonials-grid">
-                <div class="testimonial-card reveal">
+                <div class="testimonial-card">
                     <p class="testimonial-text">עדי פשוט קסומה! הגבות שלי נראות מדהים, טבעי ומושלם. ממליצה בחום!</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">👩</div>
                         <div>
                             <div class="testimonial-name">מיכל כ.</div>
-                            <div class="testimonial-stars">★★★★★</div>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card reveal">
+                <div class="testimonial-card">
                     <p class="testimonial-text">שירות מקצועי ואישי. עדי הקשיבה בדיוק למה שרציתי והתוצאה עלתה על כל הציפיות!</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">👩</div>
                         <div>
                             <div class="testimonial-name">שירה ל.</div>
-                            <div class="testimonial-stars">★★★★★</div>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card reveal">
+                <div class="testimonial-card">
                     <p class="testimonial-text">כבר שנתיים שאני מטפלת רק אצל עדי. ידיים זהב ותוצאות מושלמות בכל פעם מחדש!</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">👩</div>
                         <div>
                             <div class="testimonial-name">נועה ר.</div>
-                            <div class="testimonial-stars">★★★★★</div>
                         </div>
                     </div>
                 </div>
@@ -680,10 +557,10 @@
         </div>
     </section>
 
-    <section class="cta-section reveal">
+    <section class="cta-section">
         <div class="container">
             <h2>מוכנה להפוך את הגבות שלך למושלמות?</h2>
-            <div class="contact-buttons">
+            <div style="display: flex; flex-direction: column; gap: 20px; align-items: center; margin-top: 20px;">
                 <a href="tel:+972502129735" class="cta-button">התקשרי עכשיו 📞</a>
                 <a href="https://wa.me/972502129735?text=היי%20עדי,%20אשמח%20לקבוע%20תור%20לעיצוב%20גבות" class="whatsapp-button">שלחי וואטסאפ 💬</a>
             </div>
@@ -692,7 +569,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>Adi Buganim - עיצוב גבות מקצועי | <a href="tel:+972502129735" style="color: inherit; text-decoration: none;">050-2129735</a></p>
+            <p>Adi Buganim - עיצוב גבות מקצועי | 050-2129735</p>
             <p>© 2026 כל הזכויות שמורות</p>
             <div class="footer-links">
                 <button onclick="openModal('accessibility-modal')">הצהרת נגישות</button>
@@ -701,73 +578,33 @@
         </div>
     </footer>
 
-    <!-- Accessibility Button -->
-    <button class="accessibility-btn" onclick="openModal('accessibility-modal')" aria-label="תפריט נגישות">
-        <span>♿</span>
-        <span>נגישות</span>
-    </button>
+    <button class="accessibility-btn" onclick="openModal('accessibility-modal')">♿ נגישות</button>
 
-    <!-- Accessibility Modal -->
     <div id="accessibility-modal" class="modal-overlay">
-        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="acc-title">
-            <button class="modal-close-btn" onclick="closeModal('accessibility-modal')" aria-label="סגור חלון">✕</button>
-            <h2 id="acc-title">הצהרת נגישות</h2>
-            <p>אנו ב-**Adi Buganim** מחויבים להנגשת האתר לכלל המשתמשים, לרבות אנשים עם מוגבלות, בהתאם לתקן הישראלי IS 5568 ברמה AA.</p>
-            <h3>מה בוצע להנגשת האתר:</h3>
-            <ul>
-                <li>ניווט מלא באמצעות מקלדת.</li>
-                <li>תמיכה בקוראי מסך ומבנה סמנטי תקין.</li>
-                <li>יחסי ניגודיות צבעים תקינים.</li>
-                <li>כפתורים ואזורי לחיצה בגודל נגיש (מינימום 44px).</li>
-                <li>התאמה מלאה למכשירים ניידים.</li>
-            </ul>
-            <h3>יצירת קשר בנושא נגישות:</h3>
-            <p>עדי בוגנים - טלפון: <a href="tel:+972502129735">050-2129735</a></p>
-            <p class="modal-note">עדכון אחרון: פברואר 2026</p>
+        <div class="modal-box">
+            <button class="modal-close-btn" onclick="closeModal('accessibility-modal')">✕</button>
+            <h2>הצהרת נגישות</h2>
+            <p>אנו מחויבים להנגשת האתר לכלל המשתמשים בהתאם לתקן IS 5568 ברמה AA.</p>
+            <p>האתר כולל ניווט מקלדת, תמיכה בקוראי מסך והתאמה לניידים.</p>
+            <p>לפניות בנושא נגישות: עדי בוגנים - 050-2129735</p>
         </div>
     </div>
 
-    <!-- Privacy Modal -->
     <div id="privacy-modal" class="modal-overlay">
-        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="priv-title">
-            <button class="modal-close-btn" onclick="closeModal('privacy-modal')" aria-label="סגור חלון">✕</button>
-            <h2 id="priv-title">מדיניות פרטיות</h2>
-            <p>אנו מכבדים את פרטיותך. האתר אינו אוסף מידע אישי באופן אוטומטי ואינו משתמש בעוגיות למעקב.</p>
-            <h3>איסוף מידע:</h3>
-            <p>מידע שנמסר על ידך באופן יזום (שם, טלפון) באמצעות וואטסאפ או שיחה טלפונית משמש אך ורק לצורך מתן השירות המבוקש.</p>
-            <h3>צדדים שלישיים:</h3>
-            <p>השימוש בוואטסאפ כפוף למדיניות הפרטיות של Meta.</p>
-            <p class="modal-note">עדכון אחרון: פברואר 2026</p>
+        <div class="modal-box">
+            <button class="modal-close-btn" onclick="closeModal('privacy-modal')">✕</button>
+            <h2>מדיניות פרטיות</h2>
+            <p>האתר אינו אוסף מידע אישי באופן אוטומטי. מידע שתמסרי ישמש רק לקביעת תור.</p>
         </div>
     </div>
 
     <script>
-        // Navigation Scroll Handler
         window.addEventListener('scroll', function() {
             var nav = document.getElementById('mainNav');
-            if (window.scrollY > 100) {
-                nav.classList.add('visible');
-            } else {
-                nav.classList.remove('visible');
-            }
+            if (window.scrollY > 100) nav.classList.add('visible');
+            else nav.classList.remove('visible');
         });
 
-        // Intersection Observer for Reveal Animations
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Modal Functions
         function openModal(id) {
             document.getElementById(id).classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -777,19 +614,6 @@
             document.getElementById(id).classList.remove('active');
             document.body.style.overflow = '';
         }
-
-        // Close on Escape or outside click
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.modal-overlay').forEach(m => closeModal(m.id));
-            }
-        });
-
-        document.querySelectorAll('.modal-overlay').forEach(overlay => {
-            overlay.addEventListener('click', (e) => {
-                if (e.target === overlay) closeModal(overlay.id);
-            });
-        });
     </script>
 </body>
 </html>
