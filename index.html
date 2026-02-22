@@ -381,9 +381,37 @@
         .footer {
             background: #2c1810;
             color: #d4af37;
-            padding: 40px 20px;
+            padding: 40px 20px 10px;
             text-align: center;
             font-size: 1.1rem;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links button {
+            background: none;
+            border: none;
+            color: #d4af37;
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: 1rem;
+        }
+
+        .footer-credit {
+            margin-top: 15px;
+            font-size: 0.95rem;
+            color: #b8903a;
+        }
+
+        .footer-credit a {
+            color: #f4d03f;
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
@@ -415,6 +443,11 @@
             transition: all 0.3s ease;
         }
 
+        .accessibility-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
         .modal-overlay {
             display: none;
             position: fixed;
@@ -427,7 +460,9 @@
             justify-content: center;
         }
 
-        .modal-overlay.active { display: flex; }
+        .modal-overlay.active {
+            display: flex;
+        }
 
         .modal-box {
             background: white;
@@ -457,9 +492,71 @@
             justify-content: center;
         }
 
-        .modal-box h2 { color: #d4af37; margin-bottom: 20px; border-bottom: 2px solid #f0e8d0; padding-bottom: 10px; }
-        .footer-links { margin-top: 20px; display: flex; gap: 20px; justify-content: center; }
-        .footer-links button { background: none; border: none; color: #d4af37; cursor: pointer; text-decoration: underline; }
+        .modal-box h2 {
+            color: #d4af37;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f0e8d0;
+            padding-bottom: 10px;
+        }
+
+        .modal-box h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .modal-box p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .accessibility-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .accessibility-controls button {
+            padding: 8px 10px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background: #f7f7f7;
+        }
+
+        .accessibility-controls button:hover {
+            background: #eee;
+        }
+
+        /* מצבי נגישות */
+        .high-contrast {
+            filter: contrast(1.4);
+        }
+
+        .dark-mode {
+            background-color: #000 !important;
+            color: #fff !important;
+        }
+
+        .dark-mode .hero,
+        .dark-mode .services,
+        .dark-mode .about,
+        .dark-mode .testimonials,
+        .dark-mode .cta-section {
+            background: #000 !important;
+            color: #fff !important;
+        }
+
+        .dark-mode a {
+            color: #00e5ff;
+        }
+
+        .highlight-links a {
+            text-decoration: underline !important;
+            border-bottom: 2px solid #ff0;
+        }
     </style>
 </head>
 <body>
@@ -572,33 +669,54 @@
             <p>Adi Buganim - עיצוב גבות מקצועי | 050-2129735</p>
             <p>© 2026 כל הזכויות שמורות</p>
             <div class="footer-links">
-                <button onclick="openModal('accessibility-modal')">הצהרת נגישות</button>
-                <button onclick="openModal('privacy-modal')">מדיניות פרטיות</button>
+                <button type="button" onclick="openModal('accessibility-modal')">הצהרת נגישות</button>
+                <button type="button" onclick="openModal('privacy-modal')">מדיניות פרטיות</button>
+            </div>
+            <div class="footer-credit">
+                נבנה ע״י <a href="https://Lior-ai.com" target="_blank" rel="noopener">Lior-AI</a>
             </div>
         </div>
     </footer>
 
-    <button class="accessibility-btn" onclick="openModal('accessibility-modal')">♿ נגישות</button>
+    <!-- כפתור נגישות צף -->
+    <button class="accessibility-btn" type="button" onclick="openModal('accessibility-modal')" aria-label="תפריט נגישות">
+        ♿ 
+    </button>
 
-    <div id="accessibility-modal" class="modal-overlay">
+    <!-- מודאל נגישות + תפריט פעולות -->
+    <div id="accessibility-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="accessibility-title">
         <div class="modal-box">
-            <button class="modal-close-btn" onclick="closeModal('accessibility-modal')">✕</button>
-            <h2>הצהרת נגישות</h2>
-            <p>אנו מחויבים להנגשת האתר לכלל המשתמשים בהתאם לתקן IS 5568 ברמה AA.</p>
-            <p>האתר כולל ניווט מקלדת, תמיכה בקוראי מסך והתאמה לניידים.</p>
-            <p>לפניות בנושא נגישות: עדי בוגנים - 050-2129735</p>
+            <button class="modal-close-btn" type="button" onclick="closeModal('accessibility-modal')" aria-label="סגירת תפריט נגישות">✕</button>
+            <h2 id="accessibility-title">תפריט נגישות והצהרת נגישות</h2>
+
+            <div class="accessibility-controls">
+                <button type="button" onclick="increaseFontSize()">הגדלת טקסט</button>
+                <button type="button" onclick="decreaseFontSize()">הקטנת טקסט</button>
+                <button type="button" onclick="toggleHighContrast()">ניגודיות גבוהה</button>
+                <button type="button" onclick="toggleDarkMode()">רקע כהה</button>
+                <button type="button" onclick="highlightLinks()">הדגשת קישורים</button>
+                <button type="button" onclick="resetAccessibility()">איפוס הגדרות</button>
+            </div>
+
+            <h3>הצהרת נגישות</h3>
+            <p>אנו מחויבים להנגשת האתר לכלל המשתמשים בהתאם לתקן הישראלי IS 5568 וברמת התאמה מקבילה ל-WCAG 2.1 רמה AA.</p>
+            <p>באתר נעשו בין היתר התאמות אלו: ניווט בעזרת מקלדת, התאמות לתצוגה בנייד, מבנה כותרות תקין ותיאור טקסטואלי לתמונות, ככל שנדרש.</p>
+            <p>במידה ונתקלת בקושי או פער נגישות – נשמח לקבל פניה, ואנו נעשה מאמץ לטפל בכך בהקדם.</p>
+            <p>אחראית נגישות: עדי בוגנים, טלפון: 050-2129735</p>
         </div>
     </div>
 
-    <div id="privacy-modal" class="modal-overlay">
+    <!-- מודאל פרטיות -->
+    <div id="privacy-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="privacy-title">
         <div class="modal-box">
-            <button class="modal-close-btn" onclick="closeModal('privacy-modal')">✕</button>
-            <h2>מדיניות פרטיות</h2>
+            <button class="modal-close-btn" type="button" onclick="closeModal('privacy-modal')" aria-label="סגירת מדיניות פרטיות">✕</button>
+            <h2 id="privacy-title">מדיניות פרטיות</h2>
             <p>האתר אינו אוסף מידע אישי באופן אוטומטי. מידע שתמסרי ישמש רק לקביעת תור.</p>
         </div>
     </div>
 
     <script>
+        // תפריט עליון דביק
         window.addEventListener('scroll', function() {
             var nav = document.getElementById('mainNav');
             if (window.scrollY > 100) nav.classList.add('visible');
@@ -606,13 +724,50 @@
         });
 
         function openModal(id) {
-            document.getElementById(id).classList.add('active');
+            var modal = document.getElementById(id);
+            if (!modal) return;
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
         }
 
         function closeModal(id) {
-            document.getElementById(id).classList.remove('active');
+            var modal = document.getElementById(id);
+            if (!modal) return;
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
+        }
+
+        // פונקציות נגישות
+        let currentFontSize = 100; // אחוז
+
+        function increaseFontSize() {
+            currentFontSize = Math.min(currentFontSize + 10, 160);
+            document.documentElement.style.fontSize = currentFontSize + '%';
+        }
+
+        function decreaseFontSize() {
+            currentFontSize = Math.max(currentFontSize - 10, 80);
+            document.documentElement.style.fontSize = currentFontSize + '%';
+        }
+
+        function toggleHighContrast() {
+            document.body.classList.toggle('high-contrast');
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function highlightLinks() {
+            document.body.classList.toggle('highlight-links');
+        }
+
+        function resetAccessibility() {
+            currentFontSize = 100;
+            document.documentElement.style.fontSize = '100%';
+            document.body.classList.remove('high-contrast', 'dark-mode', 'highlight-links');
         }
     </script>
 </body>
